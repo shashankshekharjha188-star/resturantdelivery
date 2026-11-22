@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LeftoverRescue helps restaurants sell surplus food at late-night discounts.">
+  <title>LeftoverRescue | Save food, save money</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" data-page="home"><span class="brand-mark">LR</span><span>Leftover<span class="brand-accent">Rescue</span></span></a>
+    <nav class="desktop-nav">
+      <button class="nav-link active" data-page="home">Home</button>
+      <button class="nav-link" data-page="deals">Explore deals</button>
+      <button class="nav-link" data-page="manager">Manager demo</button>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="notificationBtn" aria-label="Notifications">♧<span class="dot"></span></button>
+      <button class="btn btn-outline" data-page="login">Log in</button>
+      <button class="btn btn-primary" data-page="login">Get started</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page active" id="home">
+      <div class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="pulse"></span> GOOD FOOD DESERVES A SECOND CHANCE</div>
+          <h1>Great food.<br><span>Smaller prices.</span><br>Less waste.</h1>
+          <p>Discover delicious food from nearby restaurants at special late-night prices. Save money while helping reduce food waste.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-large" data-page="deals">Explore food deals <span>→</span></button>
+            <button class="btn btn-light btn-large" data-page="manager">I'm a restaurant</button>
+          </div>
+          <div class="hero-proof"><div class="avatar-stack"><i>🍜</i><i>🥗</i><i>🍕</i></div><span><b>Good food, rescued daily</b><br>Join the food-saving movement</span></div>
+        </div>
+        <div class="hero-art">
+          <div class="art-glow"></div>
+          <div class="food-card main-food"><div class="food-photo photo-bowl">🍛</div><div class="food-card-info"><div><b>Veg Biryani Bowl</b><small>Spice Garden · 1.2 km away</small></div><span class="discount">40% OFF</span></div><div class="price-line"><strong>₹108</strong><del>₹180</del><span>● 4.8</span></div></div>
+          <div class="floating-note note-top">♻️ <span><b>Food saved</b><small>One meal at a time</small></span></div>
+          <div class="floating-note note-bottom">⚡ <span><b>Late-night deals</b><small>Freshly listed near you</small></span></div>
+          <div class="hero-orbit">SAVE<br><b>UP TO</b><br><strong>60%</strong></div>
+        </div>
+      </div>
+      <section class="stats-strip">
+        <div><strong>30–60%</strong><span>Late-night discounts</span></div><div><strong>1 simple goal</strong><span>Reduce food waste</span></div><div><strong>Local first</strong><span>Support nearby restaurants</span></div>
+      </section>
+      <section class="section-wrap">
+        <div class="section-heading"><div><span class="eyebrow">HOW IT WORKS</span><h2>Good food, rescued in 3 steps</h2></div><button class="text-link" data-page="deals">See available deals →</button></div>
+        <div class="steps-grid">
+          <article class="step-card"><span class="step-icon">🔎</span><span class="step-no">01</span><h3>Discover</h3><p>Browse discounted surplus food from restaurants around you.</p></article>
+          <article class="step-card"><span class="step-icon">🛍️</span><span class="step-no">02</span><h3>Reserve</h3><p>Choose how many portions you need and reserve your deal.</p></article>
+          <article class="step-card"><span class="step-icon">🎟️</span><span class="step-no">03</span><h3>Collect</h3><p>Show your pickup code at the restaurant and enjoy your food.</p></article>
+        </div>
+      </section>
+      <section class="cta-band"><div><span class="eyebrow">FOR RESTAURANTS</span><h2>Turn extra food into an opportunity.</h2><p>List surplus portions, reach hungry customers and recover revenue.</p></div><button class="btn btn-white" data-page="manager">View manager dashboard →</button></section>
+    </section>
+
+    <section class="page" id="deals">
+      <div class="page-heading"><div><span class="eyebrow">TONIGHT'S FINDS</span><h1>Late-night <span>food deals.</span></h1><p>Good food from local kitchens, at prices worth staying up for.</p></div><div class="deal-count"><b id="dealCount">5</b><span>deals available</span></div></div>
+      <div class="filter-bar">
+        <label class="search-box">⌕ <input id="searchInput" type="search" placeholder="Search food or restaurant..."></label>
+        <select id="typeFilter" aria-label="Food type"><option value="all">All food</option><option value="veg">Vegetarian</option><option value="nonveg">Non-vegetarian</option></select>
+        <select id="priceFilter" aria-label="Maximum price"><option value="999">Any price</option><option value="60">Under ₹60</option><option value="100">Under ₹100</option><option value="150">Under ₹150</option></select>
+        <button class="btn btn-dark" id="clearFilters">Clear filters</button>
+      </div>
+      <div class="deal-grid" id="dealGrid"></div>
+      <div class="empty-state hidden" id="emptyState"><span>🥡</span><h3>No deals found</h3><p>Try changing your search or filters.</p></div>
+      <p class="demo-note">Demo website: reservations are simulated. No real payment or food order is created.</p>
+    </section>
+
+    <section class="page" id="manager">
+      <div class="page-heading"><div><span class="eyebrow">RESTAURANT SPACE</span><h1>Manager <span>dashboard.</span></h1><p>Manage surplus listings and see how much food you help rescue.</p></div><span class="status-pill"><i></i> Demo manager account</span></div>
+      <div class="metric-grid"><div class="metric-card"><span>Units rescued</span><strong id="rescuedMetric">24</strong><small>↑ Great work</small></div><div class="metric-card"><span>Revenue recovered</span><strong id="revenueMetric">₹2,460</strong><small>From rescued meals</small></div><div class="metric-card"><span>Active listings</span><strong id="activeMetric">5</strong><small>Available tonight</small></div></div>
+      <div class="manager-layout">
+        <form class="panel listing-form" id="listingForm"><div class="panel-title"><div><span class="eyebrow">ADD A DEAL</span><h2>Create food listing</h2></div><span class="panel-icon">＋</span></div>
+          <label>Food item<input id="foodName" required maxlength="45" placeholder="e.g. Paneer rice bowl"></label>
+          <div class="form-row"><label>Original price (₹)<input id="foodPrice" type="number" min="1" required placeholder="180"></label><label>Quantity<input id="foodQty" type="number" min="1" max="50" required placeholder="5"></label></div>
+          <label>Food type<select id="foodType"><option value="veg">Vegetarian</option><option value="nonveg">Non-vegetarian</option></select></label>
+          <label>Restaurant name<input id="restaurantName" required value="Spice Garden"></label>
+          <button class="btn btn-primary btn-full" type="submit">Publish discounted deal →</button>
+          <p class="form-hint">The demo applies a 40% discount to new listings.</p>
+        </form>
+        <div class="panel"><div class="panel-title"><div><span class="eyebrow">LIVE INVENTORY</span><h2>Your active listings</h2></div><span class="live-tag">● LIVE DEMO</span></div><div class="inventory-list" id="inventoryList"></div></div>
+      </div>
+    </section>
+
+    <section class="page" id="login">
+      <div class="login-shell"><div class="login-art"><span class="eyebrow">WELCOME TO THE MOVEMENT</span><h2>Every rescued meal makes a difference.</h2><p>Sign in to explore deals or manage your restaurant listings.</p><div class="login-emoji">🥘</div></div><form class="panel login-form" id="loginForm"><span class="eyebrow">YOUR ACCOUNT</span><h1>Welcome <span>back.</span></h1><label>Email address<input type="email" required placeholder="you@example.com"></label><label>Password<input type="password" required minlength="4" placeholder="Enter any 4+ characters"></label><label>Continue as<select><option>Customer</option><option>Restaurant manager</option></select></label><button class="btn btn-primary btn-full">Continue to demo</button><p class="form-hint">This is a frontend-only demo. Login details are not saved or verified.</p><button class="text-link centered" type="button" data-page="deals">Continue as guest →</button></form></div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#" data-page="home"><span class="brand-mark">LR</span><span>Leftover<span class="brand-accent">Rescue</span></span></a><p>Save food. Save money. Make a difference.</p><span>© 2026 LeftoverRescue · Frontend demo</span></footer>
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal-backdrop hidden" id="modal"><div class="modal"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div class="modal-icon">🎟️</div><span class="eyebrow">RESERVATION DEMO</span><h2>Deal reserved!</h2><p>Your demo pickup code is</p><strong class="pickup-code" id="pickupCode">482915</strong><small>Show this code at the restaurant in a real implementation.</small><button class="btn btn-primary btn-full" id="doneBtn">Done</button></div></div>
+  <script src="script.js"></script>
+</body>
+</html>
